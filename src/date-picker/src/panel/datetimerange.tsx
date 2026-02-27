@@ -19,7 +19,7 @@ import { NButton, NxButton } from '../../../button'
 import { NInput } from '../../../input'
 import { NTimePicker } from '../../../time-picker'
 import PanelHeader from './panelHeader'
-import { renderDate } from './renderDate'
+import { renderDateCell } from './render-date-cell'
 import { useDualCalendar, useDualCalendarProps } from './use-dual-calendar'
 
 export default defineComponent({
@@ -227,7 +227,10 @@ export default defineComponent({
                   }
                 >
                   <div class={`${mergedClsPrefix}-date-panel-date__trigger`} />
-                  {renderDate(datePickerSlots.date, dateItem.dateObject)}
+                  {renderDateCell(
+                    datePickerSlots['date-cell'],
+                    dateItem.dateObject
+                  )}
                   {dateItem.isCurrentDate ? (
                     <div class={`${mergedClsPrefix}-date-panel-date__sup`} />
                   ) : null}
@@ -336,7 +339,10 @@ export default defineComponent({
                   }
                 >
                   <div class={`${mergedClsPrefix}-date-panel-date__trigger`} />
-                  {renderDate(datePickerSlots.date, dateItem.dateObject)}
+                  {renderDateCell(
+                    datePickerSlots['date-cell'],
+                    dateItem.dateObject
+                  )}
                   {dateItem.isCurrentDate ? (
                     <div class={`${mergedClsPrefix}-date-panel-date__sup`} />
                   ) : null}
